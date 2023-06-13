@@ -3,10 +3,11 @@ This repository contains all the materials for the Netsoft 2023 Tutorial
 entitled [Recent Advances in Container Orchestration: Network-aware scheduling 
 in Container Clouds](https://netsoft2023.ieee-netsoft.org/program/tutorials)
 
-* Presentation slides will be available after the tutorial: [here.](./presentation/JoseSantos_ChenWang_Tutorial_IEEE_Netsoft_2023.pdf)
+* Configuration files available [here.](./demo-netsoft-2023)
+* Diktyo installation guide: [here.](./docs/Installation_Guide_Diktyo_v1.pdf)
+* Presentation slides will be available after the tutorial: [here](./presentation/JoseSantos_ChenWang_Tutorial_IEEE_Netsoft_2023.pdf)
 
-
-## Demo Prerequisites 
+## Demo Prerequisites (To replicate the live demo)
 
 * Kubernetes cluster v1.24.4: [installation with kubeadm instructions](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
