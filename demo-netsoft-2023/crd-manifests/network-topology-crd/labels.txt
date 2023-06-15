@@ -1,0 +1,31 @@
+# Zone Label:   "topology.kubernetes.io/zone"
+
+# 1 Region:  us-west-1        
+# 10 Zones:  z1, z2, ..., z10
+
+region labels:
+
+kubectl label nodes {NODE_NAME_1} topology.kubernetes.io/region=us-west-1 # --overwrite might be needed if label is already set up
+kubectl label nodes {NODE_NAME_2} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_3} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_4} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_5} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_6} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_7} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_8} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_9} topology.kubernetes.io/region=us-west-1
+kubectl label nodes {NODE_NAME_10} topology.kubernetes.io/region=us-west-1
+
+
+zone labels:
+
+kubectl label nodes {NODE_NAME_1} topology.kubernetes.io/zone=z1 # --overwrite might be needed if label is already set up
+kubectl label nodes {NODE_NAME_2} topology.kubernetes.io/zone=z2
+kubectl label nodes {NODE_NAME_3} topology.kubernetes.io/zone=z3
+kubectl label nodes {NODE_NAME_4} topology.kubernetes.io/zone=z4
+kubectl label nodes {NODE_NAME_5} topology.kubernetes.io/zone=z5
+kubectl label nodes {NODE_NAME_6} topology.kubernetes.io/zone=z6
+kubectl label nodes {NODE_NAME_7} topology.kubernetes.io/zone=z7
+kubectl label nodes {NODE_NAME_8} topology.kubernetes.io/zone=z8
+kubectl label nodes {NODE_NAME_9} topology.kubernetes.io/zone=z9
+kubectl label nodes {NODE_NAME_10} topology.kubernetes.io/zone=z10

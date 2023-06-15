@@ -1,4 +1,5 @@
 # tutorial-ieee-netsoft2023
+
 This repository contains all the materials for the Netsoft 2023 Tutorial 
 entitled [Recent Advances in Container Orchestration: Network-aware scheduling 
 in Container Clouds](https://netsoft2023.ieee-netsoft.org/program/tutorials)
@@ -9,7 +10,7 @@ in Container Clouds](https://netsoft2023.ieee-netsoft.org/program/tutorials)
 
 ## Demo Prerequisites (To replicate the live demo)
 
-* Kubernetes cluster v1.24.4: [installation with kubeadm instructions](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+* Kubernetes cluster v1.24.4: [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
 ## Contact
 

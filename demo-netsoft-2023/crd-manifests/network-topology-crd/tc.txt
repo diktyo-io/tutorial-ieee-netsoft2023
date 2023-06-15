@@ -1,0 +1,13 @@
+# Example for traffic control:
+
+#Run the following command on a node to add 2 ms:
+
+sudo tc qdisc add dev {INTERFACE_NAME} root netem delay 2ms
+
+#Run the following command on a node to add 15 ms:
+
+sudo tc qdisc add dev {INTERFACE_NAME} root netem delay 15ms
+
+#NOTES
+
+INTERFACE_NAME could be for instance enp1s0f0. Check with ifconfig

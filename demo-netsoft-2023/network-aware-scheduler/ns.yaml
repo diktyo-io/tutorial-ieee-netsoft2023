@@ -1,0 +1,7 @@
+# First part
+# Create the scheduler-plugins repository
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: scheduler-plugins
+---

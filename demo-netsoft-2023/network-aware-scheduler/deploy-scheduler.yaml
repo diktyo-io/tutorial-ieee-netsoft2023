@@ -1,0 +1,75 @@
+# Install the scheduler
+# Apply extra privileges to system:kube-scheduler.
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: system:kube-scheduler:plugins
+rules:
+  - apiGroups: ["scheduling.sigs.x-k8s.io"]
+    resources: ["podgroups", "elasticquotas", "podgroups/status", "elasticquotas/status"]
+    verbs: ["get", "list", "watch", "create", "delete", "update", "patch"]
+  - apiGroups: ["appgroup.diktyo.x-k8s.io"]
+    resources: ["appgroups"]
+    verbs: ["get", "list", "watch", "create", "delete", "update", "patch"]
+  - apiGroups: ["networktopology.diktyo.x-k8s.io"]
+    resources: ["networktopologies"]
+    verbs: ["get", "list", "watch", "create", "delete", "update", "patch"]
+  - apiGroups: ["scheduling.x-k8s.io"]
+    resources: ["podgroups", "elasticquotas", "podgroups/status", "elasticquotas/status"]
+    verbs: ["get", "list", "watch", "create", "delete", "update", "patch"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: system:kube-scheduler:plugins
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:kube-scheduler:plugins
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: system:kube-scheduler
+---
+# Deploy the scheduler
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-aware-scheduler
+  namespace: scheduler-plugins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: scheduler
+      tier: control-plane
+  template:
+    metadata:
+      labels:
+        component: scheduler
+        tier: control-plane
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: "n1.ml.ilabt-imec-be.wall2.ilabt.iminds.be"
+      containers:
+        - image: registry.k8s.io/scheduler-plugins/kube-scheduler:v0.25.7 
+          #imagePullPolicy: Never
+          command:
+            - /bin/kube-scheduler
+            - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
+            - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
+            - --config=/etc/kubernetes/sched-cc.yaml
+            - -v=9
+          name: network-aware-scheduler
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /etc/kubernetes
+              name: etckubernetes
+      hostNetwork: false
+      hostPID: false
+      volumes:
+        - hostPath:
+            path: /etc/kubernetes/
+            type: Directory
+          name: etckubernetes
