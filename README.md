@@ -12,6 +12,11 @@ in Container Clouds](https://netsoft2023.ieee-netsoft.org/program/tutorials)
 
 * Kubernetes cluster v1.24.4: [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
+## Previous Diktyo presentations
+
+* [Kubecon Europe 2022](https://www.youtube.com/watch?v=E4cP275_OCs)
+ 
+
 ## Contact
 
 [Jose Santos](https://github.com/jpedro1992/)
