@@ -16,6 +16,21 @@ in Container Clouds](https://netsoft2023.ieee-netsoft.org/program/tutorials)
 
 * [Kubecon Europe 2022](https://www.youtube.com/watch?v=E4cP275_OCs)
  
+## Related Publications
+
+Further details about Diktyo are available in our paper published in IEEE TNSM available [here.](https://ieeexplore.ieee.org/abstract/document/10111024)
+
+If you use our work, please cite our article: 
+
+```
+@article{santos2023diktyo,
+  title={Diktyo: Network-Aware Scheduling in Container-based Clouds},
+  author={Santos, Jos{\'e} and Wang, Chen and Wauters, Tim and De Turck, Filip},
+  journal={IEEE Transactions on Network and Service Management},
+  year={2023},
+  publisher={IEEE}
+}
+```
 
 ## Contact
 
